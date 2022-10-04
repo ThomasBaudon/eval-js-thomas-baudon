@@ -1,0 +1,20 @@
+.counter{
+    width: 100%;
+
+    .counter-container{
+        width: 70%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 2rem 0 0 0;
+        padding-bottom: 2rem;
+
+        select{
+            background-color: rgb(219, 219, 219);
+            border: none;
+            border-radius: .25rem;
+            padding: .5rem;
+        }
+    }
+
+}

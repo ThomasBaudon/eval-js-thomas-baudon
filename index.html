@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Évaluation JS - THOMAS BAUDON</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <!-- NAV -->
+
+        <!-- menu burger -->
+        <div class="burger-menu" id="burger">
+            <button class="burger" id="burger-button">
+                &#9776;
+            </button>
+        </div>
+        <!-- NAVIGATION LIST -->
+        <nav class="nav " id="nav">
+            <ul>
+                <li><a href="#">Louer une voiture</a></li>
+                <li><a href="#">Louer un utilitaire</a></li>
+                <li><a href="#">Réserver un chauffeur</a></li>
+                <li><a href="#">Découvrez nos agences</a></li>
+                <li><a href="#">Mon compte</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <!-- TITRE -->
+        <div class="title-container">
+            <h1>Bienvenue à bord</h1>
+            <p>Location de voiture 24h/24 et 7j/7</p>
+        </div>
+
+        <!-- FORM RESERVATION BAR -->
+        <form class="reservation-container">
+
+            <!-- adress -->
+            <div class="adress-container">
+                <input type="text" name="adress" id="adress" list="list-villes" placeholder="Adresse de départ">
+                <datalist id="list-villes">
+                    <option disable value="Adresse de départ">
+                    <option value="Paris">
+                    <option value="Los Angeles">
+                    <option value="Dublin">
+                    <option value="Bruxelles">
+                    <option value="New-york">
+                </datalist>
+            </div>
+            <!-- date début location -->
+            <div class="date-container">
+                <input type="date" id="date-begin" name="date-begin" placeholder="Début de location">
+            </div>
+
+            <!-- date fin location -->
+            <div class="date-container">
+                <input type="date" id="date-end" name="date-end" placeholder="Fin de location">
+            </div>
+
+            <input type="submit" id="submit" value="Valider ma recherche">
+        </form>
+        <!-- fin header -->
+
+    <!-- SLIDER BG -->
+    <div class="slider-container">
+
+        <div class="slider">
+            <!-- ACTIVE -->
+            <div class="slider-item active">
+                <img src="./img/background.jpg" alt="">
+            </div>
+
+            <!-- NON-ACTIVE -->
+            <div class="slider-item ">
+                <img src="./img/background2.jpg" alt="">
+            </div>
+            <div class="slider-item ">
+                <img src="./img/background3.jpg" alt="">
+            </div>
+            <div class="slider-item ">
+                <img src="./img/background4.jpg" alt="">
+            </div>
+        </div>
+
+    </div>
+
+    </header>
+
+    <main class="general-container">
+
+        <!-- ITEMS counter -->
+        <section class="counter">
+            <div class="counter-container">
+                <p>7 Résultats</p>
+            <select name="order" id="order"> <!-- size="4" -->
+                <option value="Prix croissant">Prix croissant</option>
+                <option value="Prix décroissant">Prix décroissant</option>
+                <option value="Popularité">Popularité</option>
+                <option value="Nouveauté">Nouveauté</option>
+            </select>
+            </div>
+
+        </section>
+
+        <!-- SECTION CAR LIST -->
+        <section class="car-container" id="car-container">
+            <div class="container-car-list">
+                <!-- PEUGEOT -->
+                <!-- CAR DETAILS SLIDER -->
+                <div class="car-slider-container" id="car-slider-container">
+
+                    <button class="slide-arrow slide-arrow-prev" id="slide-arrow-prev">
+                        &#9664; 
+                    </button>
+                    
+                    <button class="slide-arrow slide-arrow-next" id="slide-arrow-next">
+                    &#9658;
+                    </button>
+
+                    <ul class="slides-container" id="slides-container">
+                        <li class="slide">
+                            <img src="./img/vehicule1.png" alt="">
+                        </li>
+                        <li class="slide">
+                            <img src="./img/vehicule1.png" alt="">
+                        </li>
+                        <li class="slide">
+                            <img src="./img/vehicule1.png" alt="">
+                        </li>
+                        <li class="slide">
+                            <img src="./img/vehicule1.png" alt="">
+                        </li>
+                    </ul>
+
+            
+                </div>
+                <!-- PEUGEOT -->
+                <!-- CAR RENTAL INFORMATIONS -->
+                <div class="car-information">
+                    <h2 class="car-title">
+                        Peugeot 208
+                    </h2>
+                    <p>
+                        Diesel, 5 portes, GPS, Autoradio, Forfait 1000km (0,5€ / km supplémentaires).
+                    </p>
+                    <p>
+                        999€ - Agence de Paris
+                    </p>
+                    <button type="button">Réserver et payer</button>
+                </div>
+            </div>
+
+            <div class="container-car-list">
+                <!-- FORD -->
+                <!-- CAR DETAILS SLIDER -->
+                <div class="car-slider-container" id="car-slider-container">
+
+                    <button class="slide-arrow slide-arrow-prev" id="slide-arrow-prev">
+                        &#9664; 
+                    </button>
+                    
+                    <button class="slide-arrow slide-arrow-next" id="slide-arrow-next">
+                    &#9658;
+                    </button>
+
+                    <ul class="slides-container" id="slides-container">
+                        <li class="slide">
+                            <img src="./img/vehicule2.png" alt="">
+                        </li>
+                        <li class="slide">
+                            <img src="./img/vehicule2.png" alt="">
+                        </li>
+                        <li class="slide">
+                            <img src="./img/vehicule2.png" alt="">
+                        </li>
+                        <li class="slide">
+                            <img src="./img/vehicule2.png" alt="">
+                        </li>
+                    </ul>
+
+            
+                </div>
+
+                <!-- FORD -->
+                <!-- CAR RENTAL INFORMATIONS -->
+                <div class="car-information">
+                    <h2 class="car-title">
+                        Ford Focus
+                    </h2>
+                    <p>
+                        Diesel, 5 portes, GPS, Autoradio, Forfait 1000km (0,5€ / km supplémentaires).
+                    </p>
+                    <p>
+                        999€ - Agence de Paris
+                    </p>
+                    <button type="button">Réserver et payer</button>
+                </div>
+            </div>
+
+            <div class="container-car-list">
+                <!-- AUDI -->
+                <!-- CAR DETAILS SLIDER -->
+                <div class="car-slider-container" id="car-slider-container">
+                    <button class="slide-arrow slide-arrow-prev" id="slide-arrow-prev">
+                        &#9664; 
+                    </button>
+                    
+                    <button class="slide-arrow slide-arrow-next" id="slide-arrow-next">
+                    &#9658;
+                    </button>
+
+                    <ul class="slides-container" id="slides-container">
+                        <li class="slide">
+                            <img src="./img/vehicule3.png" alt="">
+                        </li>
+                        <li class="slide">
+                            <img src="./img/vehicule3.png" alt="">
+                        </li>
+                        <li class="slide">
+                            <img src="./img/vehicule3.png" alt="">
+                        </li>
+                        <li class="slide">
+                            <img src="./img/vehicule3.png" alt="">
+                        </li>
+                    </ul>
+
+            
+                </div>
+                <!-- AUDI -->
+                <!-- CAR RENTAL INFORMATIONS -->
+                <div class="car-information">
+                    <h2 class="car-title">
+                        Peugeot 208
+                    </h2>
+                    <p>
+                        Diesel, 5 portes, GPS, Autoradio, Forfait 1000km (0,5€ / km supplémentaires).
+                    </p>
+                    <p>
+                        999€ - Agence de Paris
+                    </p>
+                    <button type="button">Réserver et payer</button>
+                </div>
+            </div>
+
+            <div class="container-car-list">
+                <!-- OPEL -->
+                <!-- CAR DETAILS SLIDER -->
+                <div class="car-slider-container" id="car-slider-container">
+
+                    <button class="slide-arrow slide-arrow-prev" id="slide-arrow-prev">
+                        &#9664; 
+                    </button>
+                    
+                    <button class="slide-arrow slide-arrow-next" id="slide-arrow-next">
+                    &#9658;
+                    </button>
+
+                    <ul class="slides-container" id="slides-container">
+                        <li class="slide">
+                            <img src="./img/vehicule4.png" alt="">
+                        </li>
+                        <li class="slide">
+                            <img src="./img/vehicule4.png" alt="">
+                        </li>
+                        <li class="slide">
+                            <img src="./img/vehicule4.png" alt="">
+                        </li>
+                        <li class="slide">
+                            <img src="./img/vehicule4.png" alt="">
+                        </li>
+                    </ul>
+
+            
+                </div>
+                <!-- OPEL -->
+                <!-- CAR RENTAL INFORMATIONS -->
+                <div class="car-information">
+                    <h2 class="car-title">
+                        Peugeot 208
+                    </h2>
+                    <p>
+                        Diesel, 5 portes, GPS, Autoradio, Forfait 1000km (0,5€ / km supplémentaires).
+                    </p>
+                    <p>
+                        999€ - Agence de Paris
+                    </p>
+                    <button type="button">Réserver et payer</button>
+                </div>
+            </div>
+
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-container">
+            <div class="img-container">
+                <img src="./img/agence.jpg" alt="Car Agency">
+            </div>
+            <div class="info-container">
+                <h3>Notre agence de <strong class="bold">Paris</strong></h3>
+                <p>300 Boulevard de Vaugirard, 75015 Paris</p>
+                <p>Ouvert 7j/7 de 09h à 13h et de 14h à 19h</p>
+                <a href="tel:+33149782133">01 49 78 21 33</a>
+                <a href="mailto:contact@vtc.com">contact@vtc.com</a>
+            </div>
+        </div>
+        
+    </footer>
+    
+    <div class="sub-footer">
+        <p>Thomas Baudon</p>
+    </div>
+
+    <script src="./js/slider-cars.js"></script>
+    <script src="./js/slider-home.js"></script>
+    <script src="./js/infinite.js"></script>
+    <script src="./js/app.js"></script>
+</body>
+</html>

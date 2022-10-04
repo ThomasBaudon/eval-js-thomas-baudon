@@ -1,0 +1,536 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  height: 35rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  /* BURGER MENU */
+}
+header #burger {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  z-index: 999;
+}
+header #burger button {
+  border-radius: 0.25rem;
+  background: #fff;
+  border: 0;
+  font-size: 1rem;
+  color: green;
+}
+header nav {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 0;
+  background-color: #fff;
+  overflow: hidden;
+  transition: 0.3s;
+}
+header nav ul {
+  height: 100%;
+  padding: 1rem 0 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+header nav ul li {
+  padding: 0.75rem;
+}
+header nav ul li a {
+  font-size: 1.25rem;
+  text-decoration: none;
+  color: rgb(71, 71, 71);
+  transition: 0.3s;
+}
+header nav ul li a:hover {
+  color: black;
+  transition: 0.3s;
+}
+header .title-container {
+  margin-top: 2rem;
+}
+header .title-container h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 130%;
+  color: white;
+  text-align: center;
+}
+header .title-container p {
+  font-size: 1rem;
+  line-height: 130%;
+  color: white;
+  text-align: center;
+}
+header form {
+  width: 70%;
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.7);
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 0.5rem;
+  margin-bottom: 2rem;
+}
+header form input {
+  margin: 0.5rem 0;
+  border: none;
+  padding: 0.75rem;
+  width: 14rem;
+  border-radius: 0.3rem;
+  font-family: "roboto", sans-serif;
+  border: 1px solid rgb(199, 199, 199);
+}
+header form input:hover {
+  cursor: pointer;
+}
+header form input[type=date]::before {
+  content: attr(placeholder) " : ";
+  white-space: pre;
+}
+header form input[type=submit] {
+  height: 100%;
+  border: 0px;
+  border-radius: 0px;
+  background-color: rgba(0, 128, 0, 0.7);
+  transition: all 0.3s;
+  color: white;
+  cursor: pointer;
+}
+header form input[type=submit]:hover {
+  background-color: rgb(0, 128, 0);
+  transition: all 0.3s;
+}
+
+@media screen and (max-width: 1024px) {
+  header form {
+    width: 95%;
+  }
+  header form input {
+    width: 13rem;
+  }
+}
+@media screen and (max-width: 996px) {
+  header form {
+    flex-direction: column;
+    padding: 0;
+  }
+  header form input {
+    width: 85vw;
+  }
+  header form input[type=submit] {
+    width: 100%;
+    margin-bottom: 0;
+  }
+}
+@media screen and (max-width: 575px) {
+  header form {
+    flex-direction: column;
+    padding: 0;
+  }
+  header form input {
+    width: 85vw;
+  }
+}
+/* SLIDER */
+.slider-container {
+  width: 100%;
+  height: 35rem;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+}
+
+.slider {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  background-color: white;
+}
+
+.slider .slider-item {
+  height: 100%;
+  width: 100%;
+  /* display: none; */
+  position: absolute;
+  transition: transform 400ms;
+}
+
+.slider-item img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover !important;
+  object-fit: cover !important;
+  position: absolute;
+}
+
+.hidden {
+  display: none;
+}
+
+.active {
+  display: block;
+  -webkit-animation: fadeVisibility 0.5s;
+          animation: fadeVisibility 0.5s;
+  /* for fading effect when switching between slides */
+}
+
+/* SLIDER CONTROLS */
+.slider .slider-actions {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.slider .slider-actions button {
+  border-radius: 50px;
+  border: 1px solid white;
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: 0.3s;
+  border: 0;
+  font-size: 16px;
+  font-weight: light;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+}
+
+.slider .slider-actions button:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  transition: 0.3s;
+}
+
+.slider .slider-actions button#slider-button-prev {
+  margin-left: 20px;
+}
+
+.slider .slider-actions button#slider-button-next {
+  margin-right: 20px;
+}
+
+/* ANIMATION */
+@-webkit-keyframes fadeVisibility {
+  0% {
+    opacity: 0.85;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeVisibility {
+  0% {
+    opacity: 0.85;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.counter {
+  width: 100%;
+}
+.counter .counter-container {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem 0 0 0;
+  padding-bottom: 2rem;
+}
+.counter .counter-container select {
+  background-color: rgb(219, 219, 219);
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+}
+
+section {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+section .container-car-list {
+  width: 60%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem 0 0 0;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid lightgray;
+}
+section .container-car-list .car-slider-container {
+  width: 45%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+section .container-car-list .car-slider-container button {
+  width: 1rem;
+  height: 1rem;
+  font-size: 0.5rem;
+  position: absolute;
+  top: 50%;
+  background-color: lightgray;
+  border: none;
+  border-radius: 0.5rem;
+  line-height: 0.85rem;
+  padding: 0;
+  transform: translateX(50%);
+}
+section .container-car-list .car-slider-container button:nth-of-type(2) {
+  right: 0;
+  transform: translateX(-50%);
+}
+section .container-car-list .car-slider-container .slides-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+section .container-car-list .car-slider-container .slides-container::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+section .container-car-list .car-slider-container .slide {
+  width: 100%;
+  height: 100%;
+  flex: 1 0 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section .container-car-list .car-slider-container .slide img {
+  width: 70%;
+  height: auto;
+  -o-object-fit: cover !important;
+  object-fit: cover !important;
+}
+section .container-car-list .car {
+  width: 40%;
+}
+section .container-car-list .car img {
+  width: 80%;
+  height: auto;
+}
+section .container-car-list .car-information {
+  width: 50%;
+}
+section .container-car-list .car-information h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+section .container-car-list .car-information p {
+  font-size: 0.8rem;
+  margin-bottom: 0.75rem;
+}
+section .container-car-list .car-information button {
+  background-color: green;
+  transition: 0.3s;
+  border: 0px;
+  border-radius: 0.2rem;
+  padding: 0.5rem 1rem;
+  color: white;
+}
+section .container-car-list .car-information button:hover {
+  background-color: rgb(0, 165, 0);
+  transition: 0.3s;
+}
+
+@media screen and (max-width: 1024px) {
+  section .container-car-list {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 996px) {
+  section .container-car-list {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 575px) {
+  section .container-car-list {
+    flex-direction: column;
+  }
+  section .container-car-list .car-slider-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 1rem;
+  }
+  section .container-car-list .car-information {
+    width: 100%;
+    text-align: center;
+  }
+}
+footer {
+  width: 100%;
+  background-color: rgb(46, 46, 46);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+footer .footer-container {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+footer .footer-container .img-container {
+  width: 30%;
+}
+footer .footer-container .img-container img {
+  width: 100%;
+  height: auto;
+}
+footer .footer-container .info-container {
+  width: 50%;
+  color: white;
+}
+footer .footer-container .info-container h3 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 170%;
+}
+footer .footer-container .info-container p {
+  font-size: 0.85rem;
+  line-height: 150%;
+}
+footer .footer-container .info-container a {
+  display: block;
+  color: white;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.sub-footer {
+  width: 100%;
+  background-color: green;
+}
+.sub-footer p {
+  color: white;
+  text-align: center;
+  font-size: 0.85rem;
+  padding: 0.5rem;
+}
+
+@media screen and (max-width: 996px) {
+  footer .footer-container {
+    width: 80%;
+  }
+  footer .footer-container .img-container {
+    width: 40%;
+  }
+  footer .footer-container .info-container {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 575px) {
+  footer .footer-container {
+    flex-direction: column;
+    width: 90%;
+  }
+  footer .footer-container .img-container {
+    width: 100%;
+  }
+  footer .footer-container .info-container {
+    width: 100%;
+    text-align: center;
+  }
+}
+html {
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  width: 100%;
+  background-color: #fff;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.active-menu {
+  height: 50%;
+  transition: all 0.3s;
+}/*# sourceMappingURL=style.css.map */

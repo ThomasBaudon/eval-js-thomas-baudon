@@ -1,0 +1,97 @@
+/* SLIDER */
+
+.slider-container{
+    width: 100%;
+    height: 35rem;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+.slider {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    background-color: white;
+}
+
+.slider .slider-item {
+    height: 100%;
+    width: 100%;
+    /* display: none; */
+    position: absolute;
+    transition: transform 400ms;
+}
+
+.slider-item img{
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover !important;
+       object-fit: cover !important;
+
+    position: absolute;
+    // transform: translateY(-50%);
+}
+
+
+.hidden{
+    display: none;
+}
+
+.active{
+    display: block;
+    animation: fadeVisibility 0.5s;
+    /* for fading effect when switching between slides */
+}
+
+
+/* SLIDER CONTROLS */
+
+.slider .slider-actions {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.slider .slider-actions button {
+    border-radius: 50px;
+    border: 1px solid white;
+    background-color: rgba(255,255,255,.5);
+    transition: .3s;
+    border: 0;
+    font-size: 16px;
+    font-weight: light;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+}
+
+.slider .slider-actions button:hover{
+    background-color: rgba(255,255,255,.9);
+    transition: .3s;
+}
+
+.slider .slider-actions button#slider-button-prev {
+    margin-left: 20px;
+}
+
+.slider .slider-actions button#slider-button-next {
+    margin-right: 20px;
+}
+
+/* ANIMATION */
+
+@keyframes fadeVisibility {
+    0% {
+        opacity: .85;
+    }
+    100% {
+        opacity: 1;
+    }
+}
