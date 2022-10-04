@@ -1,7 +1,5 @@
 "use strict";
 
-console.log("hello");
-
 // Selecting The Container.
 const container = document.querySelector('.general-container');
 // The Scroll Event.
